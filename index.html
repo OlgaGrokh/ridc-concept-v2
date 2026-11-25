@@ -1061,7 +1061,7 @@ return{mount:mount}})();
  // the rate plaque: as wide as the header group from the search button to the right edge of «Стать участником», two rows
  var fx=document.querySelector('.hero--v2 [data-fx]');function fxAlign(){if(!fx)return;var sr=document.querySelector('.hdr .srch'),bt=document.querySelector('.hdr .btn.pri'),hero=document.getElementById('hero');
   fx.classList.remove('al');['left','width','right'].forEach(function(k){fx.style.removeProperty(k)});if(innerWidth<760||!sr||!bt||getComputedStyle(fx).position!=='absolute')return;
-  var a=sr.getBoundingClientRect(),b=bt.getBoundingClientRect(),h=hero.getBoundingClientRect();fx.classList.add('al');fx.style.setProperty('left',(a.left-h.left)+'px','important');fx.style.setProperty('width',(b.right-a.left)+'px','important');fx.style.setProperty('right','auto','important')}
+  var a=sr.getBoundingClientRect(),b=bt.getBoundingClientRect(),h=hero.getBoundingClientRect();fx.classList.add('al');fx.style.setProperty('left',(a.left-h.left)+'px','important');fx.style.setProperty('width',(document.querySelector('.hdr').getBoundingClientRect().right-a.left)+'px','important');fx.style.setProperty('right','auto','important')}
  fxAlign();addEventListener('resize',fxAlign);
  var ug=document.querySelector('.u7__g');if(ug){if(RMo||!('IntersectionObserver' in window))ug.classList.add('in');else{var iob=new IntersectionObserver(function(es){if(es[0].isIntersecting){ug.classList.add('in');iob.disconnect()}},{threshold:.25});iob.observe(ug)}
   [].forEach.call(ug.querySelectorAll('.u7t'),function(c){c.addEventListener('mouseenter',function(){if(RMo)return;c.classList.add('rp');void c.offsetWidth;c.classList.remove('rp')})})}
